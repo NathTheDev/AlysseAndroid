@@ -101,7 +101,7 @@ G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]]
 G2L["c"]["BackgroundTransparency"] = 1;
 G2L["c"]["Size"] = UDim2.new(0.9992241859436035, 0, 1.0000019073486328, 0);
 G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c"]["Text"] = [[--Thanks for using Aqura]];
+G2L["c"]["Text"] = [[--Thanks for using Aqura!]];
 G2L["c"]["Position"] = UDim2.new(-8.638499338076144e-08, 0, -0.0032679301220923662, 0);
 G2L["c"]["Name"] = [[Source]];
  
@@ -143,7 +143,7 @@ G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Text"] = [[Clear]];
 G2L["f"]["Position"] = UDim2.new(0.3483775854110718, 0, 1.065361499786377, 0);
 G2L["f"].MouseButton1Click:Connect(function()
-    G2L["c"].Text = "--Thanks for using Aqura!"
+    G2L["c"].Text = ""
     game.StarterGui:SetCore("SendNotification", {
             Title = "Aqura Android",
             Text = "Successfully Cleared TextBox!",
@@ -184,12 +184,12 @@ G2L["12"] = Instance.new("UICorner", G2L["11"]);
 G2L["13"] = Instance.new("ImageButton", G2L["1"]);
 G2L["13"]["BorderSizePixel"] = 0;
 G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13"]["Image"] = [[rbxassetid://14422104857]];
-G2L["13"]["Size"] = UDim2.new(0, 60, 0, 60)
+G2L["13"]["Image"] = [[rbxassetid://14431390209]];
+G2L["13"]["Size"] = UDim2.new(0, 40, 0, 40)
 G2L["13"]["Name"] = [[AquraToggle]];
 G2L["13"]["BorderColor3"] = Color3.fromRGB(139, 139, 139);
 G2L["13"]["Visible"] = false;
-G2L["13"]["Position"] = UDim2.new(0.42466044425964355, 0, 0.03156573325395584, 0);
+G2L["13"]["Position"] = UDim2.new(0.09859155118465424, 0, 0.01671314239501953, 0);
 G2L["13"].MouseButton1Click:Connect(function()
     G2L["2"].Visible = true
     G2L["13"].Visible = false
@@ -198,4 +198,5 @@ end)
 -- StarterGui.AquraUI.AquraToggle.UICorner
 G2L["14"] = Instance.new("UICorner", G2L["13"]);
  
+
 return G2L["1"], require;
