@@ -10,7 +10,7 @@ local allowed = {
 
 local player = game.Players.LocalPlayer
 
-if player name == allowed then
+if player.Name == allowed then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/NathTheDev/AlysseAndroid/main/AquraWhitelist"))()
 else
     game.Players.LocalPlayer:Kick("\n you dont have permission to use Aqura!")
