@@ -1,0 +1,187 @@
+
+local G2L = {};
+ 
+-- StarterGui.AquraUI
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[AquraUI]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"].ResetOnSpawn = false
+G2L["1"].Parent = gethui()
+ 
+-- StarterGui.AquraUI.AquraOfficialUI
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(30, 30, 30);
+G2L["2"]["Size"] = UDim2.new(0.5950413346290588, 0, 0.6074073910713196, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.2009831964969635, 0, 0.1962963044643402, 0);
+G2L["2"]["Name"] = [[AquraOfficialUI]];
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+ 
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame
+G2L["4"] = Instance.new("Frame", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["4"]["Size"] = UDim2.new(1, 0, 0.1260162740945816, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Name"] = [[AquraFrame]];
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["4"]);
+G2L["5"]["CornerRadius"] = UDim.new(0, 1);
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame.Aqura
+G2L["6"] = Instance.new("TextLabel", G2L["4"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Guru.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextSize"] = 25;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Size"] = UDim2.new(0.2213360071182251, 0, 0.9872974157333374, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Aqura BETA]];
+G2L["6"]["Name"] = [[Aqura]];
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Position"] = UDim2.new(0.018622292205691338, 0, 0.012704171240329742, 0);
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame.Aqura.UITextSizeConstraint
+G2L["7"] = Instance.new("UITextSizeConstraint", G2L["6"]);
+G2L["7"]["MaxTextSize"] = 25;
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame.Exit
+G2L["8"] = Instance.new("TextButton", G2L["4"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextScaled"] = true;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["Size"] = UDim2.new(0.07705149799585342, 0, 0.9949187636375427, 0);
+G2L["8"]["Name"] = [[Exit]];
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[X]];
+G2L["8"]["Position"] = UDim2.new(0.9226692318916321, 0, 0.005082280840724707, 0);
+G2L["8"].MouseButton1Click:Connect(function()
+    G2L["2"].Visible = false
+    G2L["13"].Visible = true
+end)
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraFrame.Exit.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
+G2L["9"]["CornerRadius"] = UDim.new(0, 60);
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame
+G2L["a"] = Instance.new("Frame", G2L["2"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
+G2L["a"]["Size"] = UDim2.new(0.8379628658294678, 0, 0.6219500303268433, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Position"] = UDim2.new(0.08449079096317291, 0, 0.16463419795036316, 0);
+G2L["a"]["Name"] = [[AquraExecFrame]];
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+ 
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Source
+G2L["c"] = Instance.new("TextBox", G2L["a"]);
+G2L["c"]["CursorPosition"] = -1;
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["RichText"] = true;
+G2L["c"]["TextSize"] = 25;
+G2L["c"]["TextWrapped"] = true;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Size"] = UDim2.new(0.9992241859436035, 0, 1.0000019073486328, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[]];
+G2L["c"]["Position"] = UDim2.new(-8.638499338076144e-08, 0, -0.0032679301220923662, 0);
+G2L["c"]["Name"] = [[Source]];
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Execute
+G2L["d"] = Instance.new("TextButton", G2L["a"]);
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(36, 36, 36);
+G2L["d"]["TextSize"] = 14;
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["Size"] = UDim2.new(0.3014656603336334, 0, 0.20261476933956146, 0);
+G2L["d"]["Name"] = [[Execute]];
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[Execute]];
+G2L["d"]["Position"] = UDim2.new(0, 0, 1.065361499786377, 0);
+G2L["d"].MouseButton1Click:Connect(function()
+    loadstring(G2L["c"].Text)()
+end)
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Execute.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+ 
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Clear
+G2L["f"] = Instance.new("TextButton", G2L["a"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(36, 36, 36);
+G2L["f"]["TextSize"] = 14;
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["Size"] = UDim2.new(0.3014656603336334, 0, 0.20261476933956146, 0);
+G2L["f"]["Name"] = [[Clear]];
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Text"] = [[Clear]];
+G2L["f"]["Position"] = UDim2.new(0.3483775854110718, 0, 1.065361499786377, 0);
+G2L["f"].MouseButton1Click:Connect(function()
+    G2L["c"].Text = "--Thanks for using Aqura!"
+end)
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Clear.UICorner
+G2L["10"] = Instance.new("UICorner", G2L["f"]);
+ 
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Clipboard
+G2L["11"] = Instance.new("TextButton", G2L["a"]);
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(36, 36, 36);
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["Size"] = UDim2.new(0.3014656603336334, 0, 0.20261476933956146, 0);
+G2L["11"]["Name"] = [[Clipboard]];
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Exec Clipboard]];
+G2L["11"]["Position"] = UDim2.new(0.6967551708221436, 0, 1.065361499786377, 0);
+G2L["11"].MouseButton1Click:Connect(function()
+    loadstring(getclipboard())()
+end)
+ 
+-- StarterGui.AquraUI.AquraOfficialUI.AquraExecFrame.Clipboard.UICorner
+G2L["12"] = Instance.new("UICorner", G2L["11"]);
+ 
+ 
+-- StarterGui.AquraUI.AquraToggle
+G2L["13"] = Instance.new("ImageButton", G2L["1"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["Image"] = [[rbxassetid://14422104857]];
+G2L["13"]["Size"] = UDim2.new(0, 60, 0, 60)
+G2L["13"]["Name"] = [[AquraToggle]];
+G2L["13"]["BorderColor3"] = Color3.fromRGB(139, 139, 139);
+G2L["13"]["Visible"] = false;
+G2L["13"]["Position"] = UDim2.new(0.42466044425964355, 0, 0.03156573325395584, 0);
+G2L["13"].MouseButton1Click:Connect(function()
+    G2L["2"].Visible = true
+    G2L["13"].Visible = false
+end)
+ 
+-- StarterGui.AquraUI.AquraToggle.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+ 
+return G2L["1"], require;
