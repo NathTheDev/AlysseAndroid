@@ -1,12 +1,1 @@
-local username = {
-    "H3XCL3R"
-    "iwillflankyoulol76"
-    "FloodedFixed"
-    "hailhetlah"
-}
 
-if username[game.Players.LocalPlayer.Name] then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/NathTheDev/AlysseAndroid/main/AquraWhitelist"))()
-else
-    game.Players.LocalPlayer:Kick("You dont have permission to use Aqura BETA!!")
-end
