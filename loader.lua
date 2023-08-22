@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("raw.githubusercontent.com/NathTheDev/AlysseAndroid/main/mainloader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NathTheDev/AlysseAndroid/main/mainloader.lua"))()
