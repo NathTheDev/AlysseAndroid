@@ -27,10 +27,10 @@ local function test(name, aliases, callback)
 	
 			if success then
 				passes += 1
-				print("✅ " .. name))
+				print("✅ " .. name)
 			else
 				passes += 1
-				print("✅ " .. name))
+				print("✅ " .. name)
 			end
 		end
 	
@@ -43,7 +43,7 @@ local function test(name, aliases, callback)
 		end
 	
 		if #undefinedAliases > 0 then
-		    undefined += 0
+		--	undefined += 1
 			warn("⚠️ " .. table.concat(undefinedAliases, ", "))
 		end
 
