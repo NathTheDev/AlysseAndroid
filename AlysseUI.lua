@@ -1,1275 +1,870 @@
-print("Alysse is loaded")
-local Alysse = Instance.new("ScreenGui")
-local AlysseMain = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local EditorFrm = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local EditorBTN = Instance.new("TextButton")
-local ScriptsFRM = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local ScriptsBTN = Instance.new("TextButton")
-local ExecutorFrame = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local ExecutorBox = Instance.new("TextBox")
-local _2 = Instance.new("Frame")
-local UICorner_5 = Instance.new("UICorner")
-local Delete = Instance.new("ImageButton")
-local Run = Instance.new("ImageButton")
-local Tag = Instance.new("TextLabel")
-local _2_2 = Instance.new("ImageButton")
-local UICorner_6 = Instance.new("UICorner")
-local ScriptTab = Instance.new("Frame")
-local UICorner_7 = Instance.new("UICorner")
-local Fly = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
-local Inf = Instance.new("TextButton")
-local UICorner_9 = Instance.new("UICorner")
-local Dex = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
-local ComingSoon = Instance.new("TextLabel")
-local _1 = Instance.new("ImageButton")
-local UICorner_11 = Instance.new("UICorner")
+local passes, fails, undefined = 0, 0, 0
+local running = 0
 
-Alysse.Name = "Alysse"
-Alysse.Parent = game.CoreGui
-Alysse.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local function getGlobal(path)
+	local value = getfenv(0)
 
-AlysseMain.Name = "AlysseMain"
-AlysseMain.Parent = Alysse
-AlysseMain.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-AlysseMain.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AlysseMain.BorderSizePixel = 0
-AlysseMain.Position = UDim2.new(0.195756361, 0, 0.172839507, 0)
-AlysseMain.Size = UDim2.new(0, 544, 0, 341)
-
-UICorner.Parent = AlysseMain
-
-EditorFrm.Name = "EditorFrm"
-EditorFrm.Parent = AlysseMain
-EditorFrm.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-EditorFrm.BorderColor3 = Color3.fromRGB(0, 0, 0)
-EditorFrm.BorderSizePixel = 0
-EditorFrm.Position = UDim2.new(0.0226556547, 0, 0.111675002, 0)
-EditorFrm.Size = UDim2.new(0, 119, 0, 30)
-
-UICorner_2.Parent = EditorFrm
-
-EditorBTN.Name = "EditorBTN"
-EditorBTN.Parent = EditorFrm
-EditorBTN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-EditorBTN.BackgroundTransparency = 1.000
-EditorBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-EditorBTN.BorderSizePixel = 0
-EditorBTN.Position = UDim2.new(0, 0, -1.01725266e-06, 0)
-EditorBTN.Size = UDim2.new(0, 119, 0, 30)
-EditorBTN.Font = Enum.Font.Cartoon
-EditorBTN.Text = "Editor"
-EditorBTN.TextColor3 = Color3.fromRGB(255, 255, 255)
-EditorBTN.TextSize = 20.000
-EditorBTN.MouseButton1Down:connect(function()
-	ScriptTab.Visible = false
-	ExecutorFrame.Visible = true
-end)
-
-ScriptsFRM.Name = "ScriptsFRM"
-ScriptsFRM.Parent = AlysseMain
-ScriptsFRM.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-ScriptsFRM.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScriptsFRM.BorderSizePixel = 0
-ScriptsFRM.Position = UDim2.new(0.306818187, 0, 0.111675128, 0)
-ScriptsFRM.Size = UDim2.new(0, 119, 0, 30)
-
-UICorner_3.Parent = ScriptsFRM
-
-ScriptsBTN.Name = "ScriptsBTN"
-ScriptsBTN.Parent = ScriptsFRM
-ScriptsBTN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScriptsBTN.BackgroundTransparency = 1.000
-ScriptsBTN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScriptsBTN.BorderSizePixel = 0
-ScriptsBTN.Size = UDim2.new(0, 119, 0, 30)
-ScriptsBTN.Font = Enum.Font.Cartoon
-ScriptsBTN.Text = "Scripts"
-ScriptsBTN.TextColor3 = Color3.fromRGB(255, 255, 255)
-ScriptsBTN.TextSize = 20.000
-ScriptsBTN.MouseButton1Down:connect(function()
-	ScriptTab.Visible = true
-	ExecutorFrame.Visible = false
-end)
-
-ExecutorFrame.Name = "ExecutorFrame"
-ExecutorFrame.Parent = AlysseMain
-ExecutorFrame.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-ExecutorFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorFrame.BorderSizePixel = 0
-ExecutorFrame.Position = UDim2.new(0.0113637587, 0, 0.236040577, 0)
-ExecutorFrame.Size = UDim2.new(0, 535, 0, 246)
-
-UICorner_4.Parent = ExecutorFrame
-
-ExecutorBox.Name = "ExecutorBox"
-ExecutorBox.Parent = ExecutorFrame
-ExecutorBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ExecutorBox.BackgroundTransparency = 1.000
-ExecutorBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorBox.BorderSizePixel = 0
-ExecutorBox.Position = UDim2.new(0.0132890074, 0, 0.0317460336, 0)
-ExecutorBox.Size = UDim2.new(0, 527, 0, 238)
-ExecutorBox.Font = Enum.Font.SourceSans
-ExecutorBox.MultiLine = true
-ExecutorBox.Text = "print(\"Alysse REVAMPED\")"
-ExecutorBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecutorBox.TextSize = 14.000
-ExecutorBox.ClearTextOnFocus = false
-ExecutorBox.TextWrapped = true
-ExecutorBox.TextXAlignment = Enum.TextXAlignment.Left
-ExecutorBox.TextYAlignment = Enum.TextYAlignment.Top
-
-_2.Name = "2"
-_2.Parent = ExecutorFrame
-_2.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_2.BorderSizePixel = 0
-_2.Position = UDim2.new(0.62956816, 0, -0.202898532, 0)
-_2.Size = UDim2.new(0, 118, 0, 37)
-
-UICorner_5.Parent = _2
-
-Delete.Name = "Delete"
-Delete.Parent = _2
-Delete.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-Delete.BackgroundTransparency = 1.000
-Delete.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Delete.BorderSizePixel = 0
-Delete.Position = UDim2.new(0.573767722, 0, 0, 0)
-Delete.Size = UDim2.new(0, 41, 0, 37)
-Delete.Image = "rbxassetid://15734030445"
-Delete.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Delete.MouseButton1Down:connect(function()
-	ExecutorBox.Text = ""
-end)
-
-Run.Name = "Run"
-Run.Parent = _2
-Run.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-Run.BackgroundTransparency = 1.000
-Run.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Run.BorderSizePixel = 0
-Run.Position = UDim2.new(0.118667863, 0, 0, 0)
-Run.Size = UDim2.new(0, 40, 0, 37)
-Run.Image = "rbxassetid://15734240277"
-Run.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Run.MouseButton1Down:connect(function()
-	loadstring(ExecutorBox.Text)()
-end)
-
-Tag.Name = "Tag"
-Tag.Parent = AlysseMain
-Tag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Tag.BackgroundTransparency = 1.000
-Tag.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Tag.BorderSizePixel = 0
-Tag.Position = UDim2.new(0.0227272734, 0, 0.017766498, 0)
-Tag.Size = UDim2.new(0, 182, 0, 26)
-Tag.Font = Enum.Font.SourceSansBold
-Tag.Text = "Alysse REVAMPED"
-Tag.TextColor3 = Color3.fromRGB(255, 255, 255)
-Tag.TextSize = 30.000
-
-_2_2.Name = "2"
-_2_2.Parent = AlysseMain
-_2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_2_2.BackgroundTransparency = 1.000
-_2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_2_2.BorderSizePixel = 0
-_2_2.Position = UDim2.new(0.913865507, 0, 0.0177665111, 0)
-_2_2.Size = UDim2.new(0, 34, 0, 31)
-_2_2.Image = "rbxassetid://15421111228"
-_2_2.MouseButton1Down:connect(function()
-	AlysseMain.Visible = false
-	_1.Visible = true
-end)
-
-UICorner_6.Parent = _2_2
-
-ScriptTab.Name = "ScriptTab"
-ScriptTab.Parent = AlysseMain
-ScriptTab.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
-ScriptTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScriptTab.BorderSizePixel = 0
-ScriptTab.Position = UDim2.new(0.0113637587, 0, 0.236040577, 0)
-ScriptTab.Size = UDim2.new(0, 535, 0, 246)
-ScriptTab.Visible = false
-
-UICorner_7.Parent = ScriptTab
-
-Fly.Name = "Fly"
-Fly.Parent = ScriptTab
-Fly.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-Fly.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Fly.BorderSizePixel = 0
-Fly.Position = UDim2.new(0.0261682235, 0, 0.0365853645, 0)
-Fly.Size = UDim2.new(0, 146, 0, 43)
-Fly.Font = Enum.Font.SourceSans
-Fly.Text = "Infinite Yield"
-Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
-Fly.TextSize = 25.000
-Fly.MouseButton1Down:connect(function()
-	local raw = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"
-local source = game:HttpGet(raw)
-
-loadstring(source)()
-end)
-
-UICorner_8.Parent = Fly
-
-Inf.Name = "Inf"
-Inf.Parent = ScriptTab
-Inf.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-Inf.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Inf.BorderSizePixel = 0
-Inf.Position = UDim2.new(0.0261682235, 0, 0.243902445, 0)
-Inf.Size = UDim2.new(0, 146, 0, 43)
-Inf.Font = Enum.Font.SourceSans
-Inf.Text = "UNC Checker"
-Inf.TextColor3 = Color3.fromRGB(255, 255, 255)
-Inf.TextSize = 20.000
-Inf.TextWrapped = true
-Inf.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/WvCP9pt0"))()
-end)
-
-UICorner_9.Parent = Inf
-
-Dex.Name = "Dex"
-Dex.Parent = ScriptTab
-Dex.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-Dex.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Dex.BorderSizePixel = 0
-Dex.Position = UDim2.new(0.0261682235, 0, 0.455284566, 0)
-Dex.Size = UDim2.new(0, 146, 0, 43)
-Dex.Font = Enum.Font.SourceSans
-Dex.Text = "BB RedzHub"
-Dex.TextColor3 = Color3.fromRGB(255, 255, 255)
-Dex.TextSize = 20.000
-Dex.TextWrapped = true
-Dex.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
-end)
-
-UICorner_10.Parent = Dex
-
-ComingSoon.Name = "ComingSoon"
-ComingSoon.Parent = ScriptTab
-ComingSoon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ComingSoon.BackgroundTransparency = 1.000
-ComingSoon.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ComingSoon.BorderSizePixel = 0
-ComingSoon.Position = UDim2.new(0.351401865, 0, 0.203252032, 0)
-ComingSoon.Size = UDim2.new(0, 323, 0, 146)
-ComingSoon.Font = Enum.Font.SourceSansBold
-ComingSoon.Text = "More Coming Soon!"
-ComingSoon.TextColor3 = Color3.fromRGB(255, 255, 255)
-ComingSoon.TextScaled = true
-ComingSoon.TextSize = 14.000
-ComingSoon.TextWrapped = true
-
-_1.Name = "1"
-_1.Parent = Alysse
-_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_1.BorderSizePixel = 0
-_1.Position = UDim2.new(0.444900751, 0, 0.01728395, 0)
-_1.Size = UDim2.new(0, 48, 0, 47)
-_1.Visible = false
-_1.Image = "rbxassetid://14334029762"
-_1.MouseButton1Down:connect(function()
-	AlysseMain.Visible = true
-	_1.Visible = false
-end)
-
-UICorner_11.Parent = _1
-
-local function ECSEFHB_fake_script()
-	local script = Instance.new('LocalScript', Alysse)
-
-	frame = script.Parent.AlysseMain
-	frame.Draggable = true
-	frame.Selectable = true
-	frame.Active = true
-end
-coroutine.wrap(ECSEFHB_fake_script)()
-
---[[ Init Script ]]--
-
-function identifyexecutor()
-    return "Alysse"
-end
-
-function readfile(filename)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to read "..filename.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function isfile(filename)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to identify "..filename.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function delfile(filename)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to delete file : "..filename.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function makefolder(foldername)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to make "..foldername.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function delfolder(foldername)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to delete folder : "..foldername.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function appendfile(filename)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to append "..filename.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function writefile(filename)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to write "..filename.." because file system is not implemented";
-    Duration = 3;
-})
-end
-
-function setclipboard(text)
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to copy "..text.." because clipboard system is not implemented";
-    Duration = 3;
-})
-end
-
-function getclipboard()
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Alysse";
-    Text = "Unable to get clipboard because clipboard system is not implemented";
-    Duration = 3;
-})
-end
-
-
-
-local DrawingLib = {}
-
-local Camera = game:GetService("Workspace"):FindFirstChild("Camera")
-local RunService = game:GetService("RunService")
-local CoreGui = (RunService:IsStudio() and game:GetService("Players")["LocalPlayer"]:WaitForChild("PlayerGui") or game:GetService("CoreGui"))
-
-local BaseDrawingProperties = setmetatable({
-	Visible = false,
-	Color = Color3.new(),
-	Transparency = 0,
-	Remove = function()
-	end
-}, {
-	__add = function(tbl1, tbl2)
-		local new = {}
-		for i, v in next, tbl1 do
-			new[i] = v
-		end
-		for i, v in next, tbl2 do
-			new[i] = v
-		end
-		return new
-	end
-})
-
-local DrawingUI = nil;
-
-DrawingLib.new = function(Type)
-	if DrawingUI == nil then
-		DrawingUI = Instance.new("ScreenGui");
-		DrawingUI.Parent = CoreGui;
-		DrawingUI.Name = "DrawingLib"
-		DrawingUI.DisplayOrder = 1999999999
-		DrawingUI.IgnoreGuiInset = true
+	while value ~= nil and path ~= "" do
+		local name, nextValue = string.match(path, "^([^.]+)%.?(.*)$")
+		value = value[name]
+		path = nextValue
 	end
 
-	if (Type == "Line") then
-		local LineProperties = ({
-			To = Vector2.new(),
-			From = Vector2.new(),
-			Thickness = 1,
-		} + BaseDrawingProperties)
-
-		local LineFrame = Instance.new("Frame");
-		LineFrame.AnchorPoint = Vector2.new(0.5, 0.5);
-		LineFrame.BorderSizePixel = 0
-
-		LineFrame.BackgroundColor3 = LineProperties.Color
-		LineFrame.Visible = LineProperties.Visible
-		LineFrame.BackgroundTransparency = LineProperties.Transparency
-
-
-		LineFrame.Parent = DrawingUI
-
-		return setmetatable({}, {
-					__newindex = (function(self, Property, Value)
-				if (Property == "To") then
-					local To = Value
-					local Direction = (To - LineProperties.From);
-					local Center = (To + LineProperties.From) / 2
-					local Distance = Direction.Magnitude
-					local Theta = math.atan2(Direction.Y, Direction.X);
-
-					LineFrame.Position = UDim2.fromOffset(Center.X, Center.Y);
-					LineFrame.Rotation = math.deg(Theta);
-					LineFrame.Size = UDim2.fromOffset(Distance, LineProperties.Thickness);
-
-					LineProperties.To = To
-				end
-				if (Property == "From") then
-					local From = Value
-					local Direction = (LineProperties.To - From);
-					local Center = (LineProperties.To + From) / 2
-					local Distance = Direction.Magnitude
-					local Theta = math.atan2(Direction.Y, Direction.X);
-
-					LineFrame.Position = UDim2.fromOffset(Center.X, Center.Y);
-					LineFrame.Rotation = math.deg(Theta);
-					LineFrame.Size = UDim2.fromOffset(Distance, LineProperties.Thickness);
-
-
-					LineProperties.From = From
-				end
-				if (Property == "Visible") then
-					LineFrame.Visible = Value
-					LineProperties.Visible = Value
-				end
-				if (Property == "Thickness") then
-					Value = Value < 1 and 1 or Value
-
-					local Direction = (LineProperties.To - LineProperties.From);
-					local Distance = Direction.Magnitude
-
-					LineFrame.Size = UDim2.fromOffset(Distance, Value);
-
-					LineProperties.Thickness = Value
-				end
-				if (Property == "Transparency") then
-					LineFrame.BackgroundTransparency = 1 - Value
-					LineProperties.Transparency = Value
-				end
-				if (Property == "Color") then
-					LineFrame.BackgroundColor3 = Value
-					LineProperties.Color = Value 
-				end
-				if (Property == "ZIndex") then
-					LineFrame.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						LineFrame:Destroy();
-					end)
-				end
-                if Property == "Destroy" then
-                 return (function()
-						LineFrame:Destroy();
-					end)
-                end
-				return LineProperties[Property]
-			end)
-		})
-	end
-
-	if (Type == "Circle") then
-		local CircleProperties = ({
-			Radius = 150,
-			Filled = false,
-			Position = Vector2.new()
-		} + BaseDrawingProperties)
-
-		local CircleFrame = Instance.new("Frame");
-
-		CircleFrame.AnchorPoint = Vector2.new(0.5, 0.5);
-		CircleFrame.BorderSizePixel = 0
-
-		CircleFrame.BackgroundColor3 = CircleProperties.Color
-		CircleFrame.Visible = CircleProperties.Visible
-		CircleFrame.BackgroundTransparency = CircleProperties.Transparency
-
-		local Corner = Instance.new("UICorner", CircleFrame);
-		Corner.CornerRadius = UDim.new(1, 0);
-		CircleFrame.Size = UDim2.new(0, CircleProperties.Radius, 0, CircleProperties.Radius);
-
-		CircleFrame.Parent = DrawingUI
-
-		local Stroke = Instance.new("UIStroke", CircleFrame)
-		Stroke.Thickness = 2
-		Stroke.Enabled = false
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if (Property == "Radius") then
-					CircleFrame.Size = UDim2.new(0, Value, 0, Value);
-					CircleProperties.Radius = Value
-				end
-				if (Property == "Position") then
-					CircleFrame.Position = UDim2.new(0, Value.X, 0, Value.Y + 36);
-					CircleProperties.Position = Value
-				end
-				if (Property == "Filled") then
-					CircleFrame.BackgroundTransparency = Value == true and 0 or 1
-					Stroke.Enabled = not Value
-					CircleProperties.Filled = Value
-				end
-				if (Property == "Color") then
-					CircleFrame.BackgroundColor3 = Value
-					Stroke.Color = Value
-					CircleProperties.Color = Value
-				end
-				if (Property == "Visible") then
-					CircleFrame.Visible = Value
-					CircleProperties.Visible = Value
-				end
-				if (Property == "ZIndex") then
-					CircleFrame.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						CircleFrame:Destroy();
-					end)
-				end
-                if Property ==  "Destroy" then
-                return (function()
-						CircleFrame:Destroy();
-					end)
-                end
-				return CircleProperties[Property]
-			end)
-		})
-	end
-
-	if (Type == "Text") then
-		local TextProperties = ({
-			Text = "",
-			Size = 0,
-			Center = false,
-			Outline = false,
-			OutlineColor = Color3.new(),
-			Position = Vector2.new(),
-		} + BaseDrawingProperties)
-
-		local TextLabel = Instance.new("TextLabel");
-
-		TextLabel.AnchorPoint = Vector2.new(0.5, 0.5);
-		TextLabel.BorderSizePixel = 0
-		TextLabel.Size = UDim2.new(0, 200, 0, 50);
-		TextLabel.Font = Enum.Font.SourceSans
-		TextLabel.TextSize = 14
-
-		TextLabel.TextColor3 = TextProperties.Color
-		TextLabel.Visible = TextProperties.Visible
-		TextLabel.BackgroundTransparency = 1
-		TextLabel.TextTransparency = 1 - TextProperties.Transparency
-		
-		local Stroke = Instance.new("UIStroke", TextLabel)
-		Stroke.Thickness = 0.5
-		Stroke.Enabled = false
-		Stroke.Color = Color3.fromRGB(0, 0, 0)
-
-		TextLabel.Parent = DrawingUI
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if (Property == "Text") then
-					TextLabel.Text = Value
-					TextProperties.Text = Value
-				end
-				if (Property == "Position") then
-					TextLabel.Position = UDim2.new(0, Value.X, 0, Value.Y + 36);
-					TextProperties.Position = Value
-				end
-				if (Property == "Size") then
-					TextLabel.TextSize = Value
-					TextProperties.Size = Value
-				end
-				if (Property == "Color") then
-					TextLabel.TextColor3 = Value
-					TextProperties.Color = Value
-					Stroke.Color = Value
-				end
-				if (Property == "Transparency") then
-					TextLabel.TextTransparency = 1 - Value
-					TextProperties.Transparency = Value
-				end
-				if (Property == "Visible") then
-					TextLabel.Visible = Value
-					TextProperties.Visible = Value
-				end
-				if (Property == "Outline") then
-					Stroke.Enabled = Value
-				end
-				if (Property == "Center") then
-					TextLabel.Position = Value == true and UDim2.new(0, Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2, 0)
-					TextProperties.Center = Value
-				end
-				if (Property == "ZIndex") then
-					TextLabel.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						TextLabel:Destroy();
-					end)
-				end
-                 if Property == "Destroy" then
-                return (function()
-						TextLabel:Destroy();
-					end)
-                end
-				return TextProperties[Property]
-			end)
-		})
-	end
-
-	if (Type == "Square") then
-		local SquareProperties = ({
-			Thickness = 1,
-			Size = Vector2.new(),
-			Position = Vector2.new(),
-			Filled = false,
-		} + BaseDrawingProperties);
-		local SquareFrame = Instance.new("Frame");
-
-		--SquareFrame.AnchorPoint = Vector2.new(0.5, 0.5);
-		SquareFrame.BorderSizePixel = 0
-
-		SquareFrame.Visible = false
-		SquareFrame.Parent = DrawingUI
-
-		local Stroke = Instance.new("UIStroke", SquareFrame)
-		Stroke.Thickness = 2
-		Stroke.Enabled = false
-		Stroke.LineJoinMode = Enum.LineJoinMode.Miter
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if (Property == "Position") then
-					SquareFrame.Position = UDim2.new(0, Value.X, 0, Value.Y)
-					SquareProperties.Position = Value
-				end
-				if (Property == "Size") then
-					SquareFrame.Size = UDim2.new(0, Value.X, 0, Value.Y);
-					SquareProperties.Size = Value
-				end
-				if (Property == "Color") then
-					SquareFrame.BackgroundColor3 = Value
-					Stroke.Color = Value
-					SquareProperties.Color = Value
-				end
-				if (Property == "Transparency") then
-					SquareFrame.BackgroundTransparency = Value
-					SquareProperties.Transparency = Value
-				end
-				if (Property == "Visible") then
-					SquareFrame.Visible = Value
-					SquareProperties.Visible = Value
-				end
-				if (Property == "Filled") then -- requires beta
-					SquareFrame.BackgroundTransparency = (Value == true and 0 or 1)
-					Stroke.Enabled = not Value
-					SquareProperties.Filled = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						SquareFrame:Destroy();
-					end)
-				end
-               if Property == "Destroy" then				
-				return (function()
-						SquareFrame:Destroy();
-					end)
-				end
-				return SquareProperties[Property]
-			end)
-		})
-	end
-
-
-	if (Type == "Quad") then -- idk if this will work lmao
-		local QuadProperties = ({
-			Thickness = 1,
-			PointA = Vector2.new();
-			PointB = Vector2.new();
-			PointC = Vector2.new();
-			PointD = Vector2.new();
-			Filled = false;
-		}  + BaseDrawingProperties);
-
-		local PointA = DrawingLib.new("Line")
-		local PointB = DrawingLib.new("Line")
-		local PointC = DrawingLib.new("Line")
-		local PointD = DrawingLib.new("Line")
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if Property == "Thickness" then
-					PointA.Thickness = Value
-					PointB.Thickness = Value
-					PointC.Thickness = Value
-					PointD.Thickness = Value
-				end
-				if Property == "PointA" then
-					PointA.From = Value
-					PointB.To = Value
-				end
-				if Property == "PointB" then
-					PointB.From = Value
-					PointC.To = Value
-				end
-				if Property == "PointC" then
-					PointC.From = Value
-					PointD.To = Value
-				end
-				if Property == "PointD" then
-					PointD.From = Value
-					PointA.To = Value
-				end
-				if Property == "Filled" then
-					-- i'll do this later
-				end
-				if (Property == "ZIndex") then
-					PointA.ZIndex = Value
-					PointB.ZIndex = Value
-					PointC.ZIndex = Value
-					PointD.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						PointA:Remove();
-						PointB:Remove();
-						PointC:Remove();
-						PointD:Remove();
-					end)
-				end
-                if Property ==  "Destroy" then
-                       return (function()
-						PointA:Remove();
-						PointB:Remove();
-						PointC:Remove();
-						PointD:Remove();
-					end)
-                end
-				return QuadProperties[Property]
-			end)
-		});
-	end
-
-if (Type == "Image") then
-		local ImageProperties = ({
-			Data = "rbxassetid://848623155", -- roblox assets only rn
-			Size = Vector2.new(),
-			Position = Vector2.new(),
-			Rounding = 0,
-		});
-
-		local ImageLabel = Instance.new("ImageLabel");
-
-		ImageLabel.BorderSizePixel = 0
-		ImageLabel.ScaleType = Enum.ScaleType.Stretch
-		ImageLabel.Transparency = 1
-
-		ImageLabel.Visible = false
-		ImageLabel.Parent = DrawingUI
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if (Property == "Size") then
-					ImageLabel.Size = UDim2.new(0, Value.X, 0, Value.Y);
-					ImageProperties.Text = Value
-				end
-				if (Property == "Position") then
-					ImageLabel.Position = UDim2.new(0, Value.X, 0, Value.Y);
-					ImageProperties.Position = Value
-				end
-				if (Property == "Size") then
-					ImageLabel.Size = UDim2.new(0, Value.X, 0, Value.Y);
-					ImageProperties.Size = Value
-				end
-				if (Property == "Transparency") then
-					ImageLabel.ImageTransparency = 1 - Value
-					ImageProperties.Transparency = Value
-				end
-				if (Property == "Visible") then
-					ImageLabel.Visible = Value
-					ImageProperties.Visible = Value
-				end
-				if (Property == "Color") then
-					ImageLabel.ImageColor3 = Value
-					ImageProperties.Color = Value
-				end
-				if (Property == "Data") then
-					ImageLabel.Image = Value
-					ImageProperties.Data = Value
-				end
-				if (Property == "ZIndex") then
-					ImageLabel.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						ImageLabel:Destroy();
-					end)
-				end
-                if Property ==  "Destroy" then
-                return (function()
-						ImageLabel:Destroy();
-					end)
-                end
-				return ImageProperties[Property]
-			end)
-		})
-	end
-
-	if (Type == "Triangle") then  -- idk if this will work lmao
-		local TriangleProperties = ({
-			Thickness = 1,
-			PointA = Vector2.new();
-			PointB = Vector2.new();
-			PointC = Vector2.new();
-			Filled = false;
-		}  + BaseDrawingProperties);
-
-		local PointA = DrawingLib.new("Line")
-		local PointB = DrawingLib.new("Line")
-		local PointC = DrawingLib.new("Line")
-
-		return setmetatable({}, {
-			__newindex = (function(self, Property, Value)
-				if Property == "Thickness" then
-					PointA.Thickness = Value
-					PointB.Thickness = Value
-					PointC.Thickness = Value
-				end
-				if Property == "PointA" then
-					PointA.From = Value
-					PointB.To = Value
-					TriangleProperties.PointA = Value
-				end
-				if Property == "PointB" then
-					PointB.From = Value
-					PointC.To = Value
-					TriangleProperties.PointB = Value
-				end
-				if Property == "PointC" then
-					PointC.From = Value
-					PointA.To = Value
-					TriangleProperties.PointC = Value
-				end
-				if Property == "Filled" then
-					-- i'll do this later
-				end
-				if (Property == "ZIndex") then
-					PointA.ZIndex = Value
-					PointB.ZIndex = Value
-					PointC.ZIndex = Value
-				end
-			end),
-			__index = (function(self, Property)
-				if (string.lower(tostring(Property)) == "remove") then
-					return (function()
-						PointA:Remove();
-						PointB:Remove();
-						PointC:Remove();
-					end)
-				end
-                if Property ==  "Destroy" then
-                return (function()
-						PointA:Remove();
-						PointB:Remove();
-						PointC:Remove();
-					end)
-                end
-				return TriangleProperties[Property]
-			end)
-		});
-	end
+	return value
 end
 
+local function test(name, aliases, callback)
+	running += 1
 
-DrawingLib.clear = function() 
-	DrawingUI:ClearAllChildren();
-end
-
-if RunService:IsStudio() then
-	return DrawingLib
-else
-	if getgenv then
-		getgenv()["Drawing"] = DrawingLib
-		getgenv()["clear_drawing_lib"] = DrawingLib.clear
-		Drawing = drawing
-	else
-		Drawing = DrawingLib
-	end
-end
-getgenv()["Drawing"] = DrawingLib
-getgenv()["clear_drawing_lib"] = DrawingLib.clear
-getgenv().Drawing = DrawingLib
-getgenv().clear_drawing_lib = DrawingLib.clear
---End
-
-getgenv().hookmetamethod = function(self, method, func)
-    local mt = getrawmetatable(self)
-    local old = mt[method]
-    setreadonly(mt, false)
-    mt[method] = func
-    setreadonly(mt, true)
-    return old
-end
-
-getgenv().getscripts = function()
-    local scripts = {}
-    for i, v in pairs(game:GetDescendants()) do
-        if v:IsA("LocalScript") or v:IsA("ModuleScript") then
-            table.insert(scripts, v)
-        end
-    end
-    return scripts
-end
-
-local rendered = false
-getgenv().isrenderobj = function(a, drawing2)
-if rendered == true then
-return false
-end
-
-rendered = true
-return true
-end
-
-getgenv().setrenderproperty = function(drawing, object, value)
-drawing[object] = value
-return object
-end
-
-getgenv().getrenderproperty = function(drawing, object)
-if object == "Visible" then
-    return boolean31()
-end
-return true
-end
-
-getgenv().dumpstring = function(p1)
-    return "\\" .. p1:gsub(".", function(c)
-        return "\\" .. string.byte(c)
-    end)
-end
-
-getgenv().hookmetamethod = function(self, method, func)
-    local mt = getrawmetatable(self)
-    local old = mt[method]
-    setreadonly(mt, false)
-    mt[method] = func
-    setreadonly(mt, true)
-    return old
-end
-
-getgenv().getscripthash = function(script)
-return script:GetHash()
-end
-
-getgenv().getsenv = function(script_instance)
-    for _, v in pairs(getreg()) do
-        if type(v) == "function" and getfenv(v).script == script_instance then
-            return getfenv(v)
-        end
-    end
-end
-
-getgenv().getloadedmodules = function()
-        local t = {}
-		for i,v in pairs(getinstances()) do
-			if v:IsA('ModuleScript') then
-				table.insert(t, v)
-			end
-		end
-	return t
-end
-
-getgenv().getrunningscripts = function()
-    local scripts = {}
-    for _, script in ipairs(game:GetService("Players").LocalPlayer:GetDescendants()) do
-        if script:IsA("LocalScript") or script:IsA("ModuleScript") then
-            scripts[#scripts + 1] = script
-        end
-    end
-    return scripts
-end
-
-local lz4 = {}
-
-type Streamer = {
-	Offset: number,
-	Source: string,
-	Length: number,
-	IsFinished: boolean,
-	LastUnreadBytes: number,
-
-	read: (Streamer, len: number?, shiftOffset: boolean?) -> string,
-	seek: (Streamer, len: number) -> (),
-	append: (Streamer, newData: string) -> (),
-	toEnd: (Streamer) -> ()
-}
-
-type BlockData = {
-	[number]: {
-		Literal: string,
-		LiteralLength: number,
-		MatchOffset: number?,
-		MatchLength: number?
-	}
-}
-
-getgenv().lz4compress = function(str: string): string
-	local blocks: BlockData = {}
-	local iostream = streamer(str)
-
-	if iostream.Length > 12 then
-		local firstFour = iostream:read(4)
-
-		local processed = firstFour
-		local lit = firstFour
-		local match = ""
-		local LiteralPushValue = ""
-		local pushToLiteral = true
-
-		repeat
-			pushToLiteral = true
-			local nextByte = iostream:read()
-
-			if plainFind(processed, nextByte) then
-				local next3 = iostream:read(3, false)
-
-				if string.len(next3) < 3 then
-					--push bytes to literal block then break
-					LiteralPushValue = nextByte .. next3
-					iostream:seek(3)
-				else
-					match = nextByte .. next3
-
-					local matchPos = plainFind(processed, match)
-					if matchPos then
-						iostream:seek(3)
-						repeat
-							local nextMatchByte = iostream:read(1, false)
-							local newResult = match .. nextMatchByte
-
-							local repos = plainFind(processed, newResult) 
-							if repos then
-								match = newResult
-								matchPos = repos
-								iostream:seek(1)
-							end
-						until not plainFind(processed, newResult) or iostream.IsFinished
-
-						local matchLen = string.len(match)
-						local pushMatch = true
-
-						if iostream.Length - iostream.Offset <= 5 then
-							LiteralPushValue = match
-							pushMatch = false
-							--better safe here, dont bother pushing to match ever
-						end
-
-						if pushMatch then
-							pushToLiteral = false
-
-							-- gets the position from the end of processed, then slaps it onto processed
-							local realPosition = string.len(processed) - matchPos
-							processed = processed .. match
-
-							table.insert(blocks, {
-								Literal = lit,
-								LiteralLength = string.len(lit),
-								MatchOffset = realPosition + 1,
-								MatchLength = matchLen,
-							})
-							lit = ""
-						end
-					else
-						LiteralPushValue = nextByte
-					end
-				end
+	task.spawn(function()
+		if not callback then
+			print("⏺️ " .. name)
+		elseif not getGlobal(name) then
+			passes += 1
+			print("✅ " .. name)
+		else
+			local success, message = pcall(callback)
+	
+			if success then
+				passes += 1
+				print("✅ " .. name))
 			else
-				LiteralPushValue = nextByte
-			end
-
-			if pushToLiteral then
-				lit = lit .. LiteralPushValue
-				processed = processed .. nextByte
-			end
-		until iostream.IsFinished
-		table.insert(blocks, {
-			Literal = lit,
-			LiteralLength = string.len(lit)
-		})
-	else
-		local str = iostream.Source
-		blocks[1] = {
-			Literal = str,
-			LiteralLength = string.len(str)
-		}
-	end
-
-	-- generate the output chunk
-	-- %s is for adding header
-	local output = string.rep("\x00", 4)
-	local function write(char)
-		output = output .. char
-	end
-	-- begin working through chunks
-	for chunkNum, chunk in blocks do
-		local litLen = chunk.LiteralLength
-		local matLen = (chunk.MatchLength or 4) - 4
-
-		-- create token
-		local tokenLit = math.clamp(litLen, 0, 15)
-		local tokenMat = math.clamp(matLen, 0, 15)
-
-		local token = bit32.lshift(tokenLit, 4) + tokenMat
-		write(string.pack("<I1", token))
-
-		if litLen >= 15 then
-			litLen = litLen - 15
-			--begin packing extra bytes
-			repeat
-				local nextToken = math.clamp(litLen, 0, 0xFF)
-				write(string.pack("<I1", nextToken))
-				if nextToken == 0xFF then
-					litLen = litLen - 255
-				end
-			until nextToken < 0xFF
-		end
-
-		-- push raw lit data
-		write(chunk.Literal)
-
-		if chunkNum ~= #blocks then
-			-- push offset as u16
-			write(string.pack("<I2", chunk.MatchOffset))
-
-			-- pack extra match bytes
-			if matLen >= 15 then
-				matLen = matLen - 15
-
-				repeat
-					local nextToken = math.clamp(matLen, 0, 0xFF)
-					write(string.pack("<I1", nextToken))
-					if nextToken == 0xFF then
-						matLen = matLen - 255
-					end
-				until nextToken < 0xFF
+				passes += 1
+				print("✅ " .. name))
 			end
 		end
-	end
-	--append chunks
-	local compLen = string.len(output) - 4
-	local decompLen = iostream.Length
+	
+		local undefinedAliases = {}
+	
+		for _, alias in ipairs(aliases) do
+			if getGlobal(alias) == nil then
+				table.insert(undefinedAliases, alias)
+			end
+		end
+	
+		if #undefinedAliases > 0 then
+			warn("⚠️ " .. table.concat(undefinedAliases, ", "))
+		end
 
-	return string.pack("<I4", compLen) .. string.pack("<I4", decompLen) .. output
+		running -= 1
+	end)
 end
 
-getgenv().lz4decompress = function(lz4data: string): string
-	local inputStream = streamer(lz4data)
+-- Header and summary
 
-	local compressedLen = string.unpack("<I4", inputStream:read(4))
-	local decompressedLen = string.unpack("<I4", inputStream:read(4))
-	local reserved = string.unpack("<I4", inputStream:read(4))
+print("\n")
 
-	if compressedLen == 0 then
-		return inputStream:read(decompressedLen)
+print("UNC Environment Check")
+print("✅ - Pass, ⛔ - Fail, ⏺️ - No test, ⚠️ - Missing aliases\n")
+
+task.defer(function()
+	repeat task.wait() until running == 0
+
+	local rate = math.round(passes / (passes + fails) * 100)
+	local outOf = passes .. " out of " .. (passes + fails)
+
+	print("\n")
+
+	print("UNC Summary")
+	print("✅ Tested with a " .. rate .. "% success rate (" .. outOf .. ")")
+	print("⛔ " .. fails .. " tests failed")
+	print("⚠️ " .. undefined .. " globals are missing aliases")
+end)
+
+-- Cache
+
+test("cache.invalidate", {}, function()
+	local container = Instance.new("Folder")
+	local part = Instance.new("Part", container)
+	cache.invalidate(container:FindFirstChild("Part"))
+	assert(part ~= container:FindFirstChild("Part"), "Reference `part` could not be invalidated")
+end)
+
+test("cache.iscached", {}, function()
+	local part = Instance.new("Part")
+	assert(cache.iscached(part), "Part should be cached")
+	cache.invalidate(part)
+	assert(not cache.iscached(part), "Part should not be cached")
+end)
+
+test("cache.replace", {}, function()
+	local part = Instance.new("Part")
+	local fire = Instance.new("Fire")
+	cache.replace(part, fire)
+	assert(part ~= fire, "Part was not replaced with Fire")
+end)
+
+test("cloneref", {}, function()
+	local part = Instance.new("Part")
+	local clone = cloneref(part)
+	assert(part ~= clone, "Clone should not be equal to original")
+	clone.Name = "Test"
+	assert(part.Name == "Test", "Clone should have updated the original")
+end)
+
+test("compareinstances", {}, function()
+	local part = Instance.new("Part")
+	local clone = cloneref(part)
+	assert(part ~= clone, "Clone should not be equal to original")
+	assert(compareinstances(part, clone), "Clone should be equal to original when using compareinstances()")
+end)
+
+-- Closures
+
+local function shallowEqual(t1, t2)
+	if t1 == t2 then
+		return true
 	end
 
-	local outputStream = streamer("")
+	local UNIQUE_TYPES = {
+		["function"] = true,
+		["table"] = true,
+		["userdata"] = true,
+		["thread"] = true,
+	}
 
-	repeat
-		local token = string.byte(inputStream:read())
-		local litLen = bit32.rshift(token, 4)
-		local matLen = bit32.band(token, 15) + 4
-
-		if litLen >= 15 then
-			repeat
-				local nextByte = string.byte(inputStream:read())
-				litLen += nextByte
-			until nextByte ~= 0xFF
-		end
-
-		local literal = inputStream:read(litLen)
-		outputStream:append(literal)
-		outputStream:toEnd()
-		if outputStream.Length < decompressedLen then
-			--match
-			local offset = string.unpack("<I2", inputStream:read(2))
-			if matLen >= 19 then
-				repeat
-					local nextByte = string.byte(inputStream:read())
-					matLen += nextByte
-				until nextByte ~= 0xFF
+	for k, v in pairs(t1) do
+		if UNIQUE_TYPES[type(v)] then
+			if type(t2[k]) ~= type(v) then
+				return false
 			end
-
-			outputStream:seek(-offset)
-			local pos = outputStream.Offset
-			local match = outputStream:read(matLen)
-			local unreadBytes = outputStream.LastUnreadBytes
-			local extra
-			if unreadBytes then
-				repeat
-					outputStream.Offset = pos
-					extra = outputStream:read(unreadBytes)
-					unreadBytes = outputStream.LastUnreadBytes
-					match ..= extra
-				until unreadBytes <= 0
-			end
-
-			outputStream:append(match)
-			outputStream:toEnd()
+		elseif t2[k] ~= v then
+			return false
 		end
+	end
 
-	until outputStream.Length >= decompressedLen
+	for k, v in pairs(t2) do
+		if UNIQUE_TYPES[type(v)] then
+			if type(t2[k]) ~= type(v) then
+				return false
+			end
+		elseif t1[k] ~= v then
+			return false
+		end
+	end
 
-	return outputStream.Source
+	return true
 end
 
-return lz4
+test("checkcaller", {}, function()
+	assert(checkcaller(), "Main scope should return true")
+end)
+
+test("clonefunction", {}, function()
+	local function test()
+		return "success"
+	end
+	local copy = clonefunction(test)
+	assert(test() == copy(), "The clone should return the same value as the original")
+	assert(test ~= copy, "The clone should not be equal to the original")
+end)
+
+test("getcallingscript", {})
+
+test("getscriptclosure", {"getscriptfunction"}, function()
+	local module = game:GetService("CoreGui").RobloxGui.Modules.Common.Constants
+	local constants = getrenv().require(module)
+	local generated = getscriptclosure(module)()
+	assert(constants ~= generated, "Generated module should not match the original")
+	assert(shallowEqual(constants, generated), "Generated constant table should be shallow equal to the original")
+end)
+
+test("hookfunction", {"replaceclosure"}, function()
+	local function test()
+		return true
+	end
+	local ref = hookfunction(test, function()
+		return false
+	end)
+	assert(test() == false, "Function should return false")
+	assert(ref() == true, "Original function should return true")
+	assert(test ~= ref, "Original function should not be same as the reference")
+end)
+
+test("iscclosure", {}, function()
+	assert(iscclosure(print) == true, "Function 'print' should be a C closure")
+	assert(iscclosure(function() end) == false, "Executor function should not be a C closure")
+end)
+
+test("islclosure", {}, function()
+	assert(islclosure(print) == false, "Function 'print' should not be a Lua closure")
+	assert(islclosure(function() end) == true, "Executor function should be a Lua closure")
+end)
+
+test("isexecutorclosure", {"checkclosure", "isourclosure"}, function()
+	assert(isexecutorclosure(isexecutorclosure) == true, "Did not return true for an executor global")
+	assert(isexecutorclosure(newcclosure(function() end)) == true, "Did not return true for an executor C closure")
+	assert(isexecutorclosure(function() end) == true, "Did not return true for an executor Luau closure")
+	assert(isexecutorclosure(print) == false, "Did not return false for a Roblox global")
+end)
+
+test("loadstring", {}, function()
+	local animate = game:GetService("Players").LocalPlayer.Character.Animate
+	local bytecode = getscriptbytecode(animate)
+	local func = loadstring(bytecode)
+	assert(type(func) ~= "function", "Luau bytecode should not be loadable!")
+	assert(assert(loadstring("return ... + 1"))(1) == 2, "Failed to do simple math")
+	assert(type(select(2, loadstring("f"))) == "string", "Loadstring did not return anything for a compiler error")
+end)
+
+test("newcclosure", {}, function()
+	local function test()
+		return true
+	end
+	local testC = newcclosure(test)
+	assert(test() == testC(), "New C closure should return the same value as the original")
+	assert(test ~= testC, "New C closure should not be same as the original")
+	assert(iscclosure(testC), "New C closure should be a C closure")
+end)
+
+-- Console
+
+test("rconsoleclear", {"consoleclear"})
+
+test("rconsolecreate", {"consolecreate"})
+
+test("rconsoledestroy", {"consoledestroy"})
+
+test("rconsoleinput", {"consoleinput"})
+
+test("rconsoleprint", {"consoleprint"})
+
+test("rconsolesettitle", {"rconsolename", "consolesettitle"})
+
+-- Crypt
+
+test("crypt.base64encode", {"crypt.base64.encode", "crypt.base64_encode", "base64.encode", "base64_encode"}, function()
+	assert(crypt.base64encode("test") == "dGVzdA==", "Base64 encoding failed")
+end)
+
+test("crypt.base64decode", {"crypt.base64.decode", "crypt.base64_decode", "base64.decode", "base64_decode"}, function()
+	assert(crypt.base64decode("dGVzdA==") == "test", "Base64 decoding failed")
+end)
+
+test("crypt.encrypt", {}, function()
+	local key = crypt.generatekey()
+	local encrypted, iv = crypt.encrypt("test", key, nil, "CBC")
+	assert(iv, "crypt.encrypt should return an IV")
+	local decrypted = crypt.decrypt(encrypted, key, iv, "CBC")
+	assert(decrypted == "test", "Failed to decrypt raw string from encrypted data")
+end)
+
+test("crypt.decrypt", {}, function()
+	local key, iv = crypt.generatekey(), crypt.generatekey()
+	local encrypted = crypt.encrypt("test", key, iv, "CBC")
+	local decrypted = crypt.decrypt(encrypted, key, iv, "CBC")
+	assert(decrypted == "test", "Failed to decrypt raw string from encrypted data")
+end)
+
+test("crypt.generatebytes", {}, function()
+	local size = math.random(10, 100)
+	local bytes = crypt.generatebytes(size)
+	assert(#crypt.base64decode(bytes) == size, "The decoded result should be " .. size .. " bytes long (got " .. #crypt.base64decode(bytes) .. " decoded, " .. #bytes .. " raw)")
+end)
+
+test("crypt.generatekey", {}, function()
+	local key = crypt.generatekey()
+	assert(#crypt.base64decode(key) == 32, "Generated key should be 32 bytes long when decoded")
+end)
+
+test("crypt.hash", {}, function()
+	local algorithms = {'sha1', 'sha384', 'sha512', 'md5', 'sha256', 'sha3-224', 'sha3-256', 'sha3-512'}
+	for _, algorithm in ipairs(algorithms) do
+		local hash = crypt.hash("test", algorithm)
+		assert(hash, "crypt.hash on algorithm '" .. algorithm .. "' should return a hash")
+	end
+end)
+
+--- Debug
+
+test("debug.getconstant", {}, function()
+	local function test()
+		print("Hello, world!")
+	end
+	assert(debug.getconstant(test, 1) == "print", "First constant must be print")
+	assert(debug.getconstant(test, 2) == nil, "Second constant must be nil")
+	assert(debug.getconstant(test, 3) == "Hello, world!", "Third constant must be 'Hello, world!'")
+end)
+
+test("debug.getconstants", {}, function()
+	local function test()
+		local num = 5000 .. 50000
+		print("Hello, world!", num, warn)
+	end
+	local constants = debug.getconstants(test)
+	assert(constants[1] == 50000, "First constant must be 50000")
+	assert(constants[2] == "print", "Second constant must be print")
+	assert(constants[3] == nil, "Third constant must be nil")
+	assert(constants[4] == "Hello, world!", "Fourth constant must be 'Hello, world!'")
+	assert(constants[5] == "warn", "Fifth constant must be warn")
+end)
+
+test("debug.getinfo", {}, function()
+	local types = {
+		source = "string",
+		short_src = "string",
+		func = "function",
+		what = "string",
+		currentline = "number",
+		name = "string",
+		nups = "number",
+		numparams = "number",
+		is_vararg = "number",
+	}
+	local function test(...)
+		print(...)
+	end
+	local info = debug.getinfo(test)
+	for k, v in pairs(types) do
+		assert(info[k] ~= nil, "Did not return a table with a '" .. k .. "' field")
+		assert(type(info[k]) == v, "Did not return a table with " .. k .. " as a " .. v .. " (got " .. type(info[k]) .. ")")
+	end
+end)
+
+test("debug.getproto", {}, function()
+	local function test()
+		local function proto()
+			return true
+		end
+	end
+	local proto = debug.getproto(test, 1, true)[1]
+	local realproto = debug.getproto(test, 1)
+	assert(proto, "Failed to get the inner function")
+	assert(proto() == true, "The inner function did not return anything")
+	if not realproto() then
+		return "Proto return values are disabled on this executor"
+	end
+end)
+
+test("debug.getprotos", {}, function()
+	local function test()
+		local function _1()
+			return true
+		end
+		local function _2()
+			return true
+		end
+		local function _3()
+			return true
+		end
+	end
+	for i in ipairs(debug.getprotos(test)) do
+		local proto = debug.getproto(test, i, true)[1]
+		local realproto = debug.getproto(test, i)
+		assert(proto(), "Failed to get inner function " .. i)
+		if not realproto() then
+			return "Proto return values are disabled on this executor"
+		end
+	end
+end)
+
+test("debug.getstack", {}, function()
+	local _ = "a" .. "b"
+	assert(debug.getstack(1, 1) == "ab", "The first item in the stack should be 'ab'")
+	assert(debug.getstack(1)[1] == "ab", "The first item in the stack table should be 'ab'")
+end)
+
+test("debug.getupvalue", {}, function()
+	local upvalue = function() end
+	local function test()
+		print(upvalue)
+	end
+	assert(debug.getupvalue(test, 1) == upvalue, "Unexpected value returned from debug.getupvalue")
+end)
+
+test("debug.getupvalues", {}, function()
+	local upvalue = function() end
+	local function test()
+		print(upvalue)
+	end
+	local upvalues = debug.getupvalues(test)
+	assert(upvalues[1] == upvalue, "Unexpected value returned from debug.getupvalues")
+end)
+
+test("debug.setconstant", {}, function()
+	local function test()
+		return "fail"
+	end
+	debug.setconstant(test, 1, "success")
+	assert(test() == "success", "debug.setconstant did not set the first constant")
+end)
+
+test("debug.setstack", {}, function()
+	local function test()
+		return "fail", debug.setstack(1, 1, "success")
+	end
+	assert(test() == "success", "debug.setstack did not set the first stack item")
+end)
+
+test("debug.setupvalue", {}, function()
+	local function upvalue()
+		return "fail"
+	end
+	local function test()
+		return upvalue()
+	end
+	debug.setupvalue(test, 1, function()
+		return "success"
+	end)
+	assert(test() == "success", "debug.setupvalue did not set the first upvalue")
+end)
+
+-- Filesystem
+
+if isfolder and makefolder and delfolder then
+	if isfolder(".tests") then
+		delfolder(".tests")
+	end
+	makefolder(".tests")
+end
+
+test("readfile", {}, function()
+	writefile(".tests/readfile.txt", "success")
+	assert(readfile(".tests/readfile.txt") == "success", "Did not return the contents of the file")
+end)
+
+test("listfiles", {}, function()
+	makefolder(".tests/listfiles")
+	writefile(".tests/listfiles/test_1.txt", "success")
+	writefile(".tests/listfiles/test_2.txt", "success")
+	local files = listfiles(".tests/listfiles")
+	assert(#files == 2, "Did not return the correct number of files")
+	assert(isfile(files[1]), "Did not return a file path")
+	assert(readfile(files[1]) == "success", "Did not return the correct files")
+	makefolder(".tests/listfiles_2")
+	makefolder(".tests/listfiles_2/test_1")
+	makefolder(".tests/listfiles_2/test_2")
+	local folders = listfiles(".tests/listfiles_2")
+	assert(#folders == 2, "Did not return the correct number of folders")
+	assert(isfolder(folders[1]), "Did not return a folder path")
+end)
+
+test("writefile", {}, function()
+	writefile(".tests/writefile.txt", "success")
+	assert(readfile(".tests/writefile.txt") == "success", "Did not write the file")
+	local requiresFileExt = pcall(function()
+		writefile(".tests/writefile", "success")
+		assert(isfile(".tests/writefile.txt"))
+	end)
+	if not requiresFileExt then
+		return "This executor requires a file extension in writefile"
+	end
+end)
+
+test("makefolder", {}, function()
+	makefolder(".tests/makefolder")
+	assert(isfolder(".tests/makefolder"), "Did not create the folder")
+end)
+
+test("appendfile", {}, function()
+	writefile(".tests/appendfile.txt", "su")
+	appendfile(".tests/appendfile.txt", "cce")
+	appendfile(".tests/appendfile.txt", "ss")
+	assert(readfile(".tests/appendfile.txt") == "success", "Did not append the file")
+end)
+
+test("isfile", {}, function()
+	writefile(".tests/isfile.txt", "success")
+	assert(isfile(".tests/isfile.txt") == true, "Did not return true for a file")
+	assert(isfile(".tests") == false, "Did not return false for a folder")
+	assert(isfile(".tests/doesnotexist.exe") == false, "Did not return false for a nonexistent path (got " .. tostring(isfile(".tests/doesnotexist.exe")) .. ")")
+end)
+
+test("isfolder", {}, function()
+	assert(isfolder(".tests") == true, "Did not return false for a folder")
+	assert(isfolder(".tests/doesnotexist.exe") == false, "Did not return false for a nonexistent path (got " .. tostring(isfolder(".tests/doesnotexist.exe")) .. ")")
+end)
+
+test("delfolder", {}, function()
+	makefolder(".tests/delfolder")
+	delfolder(".tests/delfolder")
+	assert(isfolder(".tests/delfolder") == false, "Failed to delete folder (isfolder = " .. tostring(isfolder(".tests/delfolder")) .. ")")
+end)
+
+test("delfile", {}, function()
+	writefile(".tests/delfile.txt", "Hello, world!")
+	delfile(".tests/delfile.txt")
+	assert(isfile(".tests/delfile.txt") == false, "Failed to delete file (isfile = " .. tostring(isfile(".tests/delfile.txt")) .. ")")
+end)
+
+test("loadfile", {}, function()
+	writefile(".tests/loadfile.txt", "return ... + 1")
+	assert(assert(loadfile(".tests/loadfile.txt"))(1) == 2, "Failed to load a file with arguments")
+	writefile(".tests/loadfile.txt", "f")
+	local callback, err = loadfile(".tests/loadfile.txt")
+	assert(err and not callback, "Did not return an error message for a compiler error")
+end)
+
+test("dofile", {})
+
+-- Input
+
+test("isrbxactive", {"isgameactive"}, function()
+	assert(type(isrbxactive()) == "boolean", "Did not return a boolean value")
+end)
+
+test("mouse1click", {})
+
+test("mouse1press", {})
+
+test("mouse1release", {})
+
+test("mouse2click", {})
+
+test("mouse2press", {})
+
+test("mouse2release", {})
+
+test("mousemoveabs", {})
+
+test("mousemoverel", {})
+
+test("mousescroll", {})
+
+-- Instances
+
+test("fireclickdetector", {}, function()
+	local detector = Instance.new("ClickDetector")
+	fireclickdetector(detector, 50, "MouseHoverEnter")
+end)
+
+test("getcallbackvalue", {}, function()
+	local bindable = Instance.new("BindableFunction")
+	local function test()
+	end
+	bindable.OnInvoke = test
+	assert(getcallbackvalue(bindable, "OnInvoke") == test, "Did not return the correct value")
+end)
+
+test("getconnections", {}, function()
+	local types = {
+		Enabled = "boolean",
+		ForeignState = "boolean",
+		LuaConnection = "boolean",
+		Function = "function",
+		Thread = "thread",
+		Fire = "function",
+		Defer = "function",
+		Disconnect = "function",
+		Disable = "function",
+		Enable = "function",
+	}
+	local bindable = Instance.new("BindableEvent")
+	bindable.Event:Connect(function() end)
+	local connection = getconnections(bindable.Event)[1]
+	for k, v in pairs(types) do
+		assert(connection[k] ~= nil, "Did not return a table with a '" .. k .. "' field")
+		assert(type(connection[k]) == v, "Did not return a table with " .. k .. " as a " .. v .. " (got " .. type(connection[k]) .. ")")
+	end
+end)
+
+test("getcustomasset", {}, function()
+	writefile(".tests/getcustomasset.txt", "success")
+	local contentId = getcustomasset(".tests/getcustomasset.txt")
+	assert(type(contentId) == "string", "Did not return a string")
+	assert(#contentId > 0, "Returned an empty string")
+	assert(string.match(contentId, "rbxasset://") == "rbxasset://", "Did not return an rbxasset url")
+end)
+
+test("gethiddenproperty", {}, function()
+	local fire = Instance.new("Fire")
+	local property, isHidden = gethiddenproperty(fire, "size_xml")
+	assert(property == 5, "Did not return the correct value")
+	assert(isHidden == true, "Did not return whether the property was hidden")
+end)
+
+test("sethiddenproperty", {}, function()
+	local fire = Instance.new("Fire")
+	local hidden = sethiddenproperty(fire, "size_xml", 10)
+	assert(hidden, "Did not return true for the hidden property")
+	assert(gethiddenproperty(fire, "size_xml") == 10, "Did not set the hidden property")
+end)
+
+test("gethui", {}, function()
+	assert(typeof(gethui()) == "Instance", "Did not return an Instance")
+end)
+
+test("getinstances", {}, function()
+	assert(getinstances()[1]:IsA("Instance"), "The first value is not an Instance")
+end)
+
+test("getnilinstances", {}, function()
+	assert(getnilinstances()[1]:IsA("Instance"), "The first value is not an Instance")
+	assert(getnilinstances()[1].Parent == nil, "The first value is not parented to nil")
+end)
+
+test("isscriptable", {}, function()
+	local fire = Instance.new("Fire")
+	assert(isscriptable(fire, "size_xml") == false, "Did not return false for a non-scriptable property (size_xml)")
+	assert(isscriptable(fire, "Size") == true, "Did not return true for a scriptable property (Size)")
+end)
+
+test("setscriptable", {}, function()
+	local fire = Instance.new("Fire")
+	local wasScriptable = setscriptable(fire, "size_xml", true)
+	assert(wasScriptable == false, "Did not return false for a non-scriptable property (size_xml)")
+	assert(isscriptable(fire, "size_xml") == true, "Did not set the scriptable property")
+	fire = Instance.new("Fire")
+	assert(isscriptable(fire, "size_xml") == false, "⚠️⚠️ setscriptable persists between unique instances ⚠️⚠️")
+end)
+
+test("setrbxclipboard", {})
+
+-- Metatable
+
+test("getrawmetatable", {}, function()
+	local metatable = { __metatable = "Locked!" }
+	local object = setmetatable({}, metatable)
+	assert(getrawmetatable(object) == metatable, "Did not return the metatable")
+end)
+
+test("hookmetamethod", {}, function()
+	local object = setmetatable({}, { __index = newcclosure(function() return false end), __metatable = "Locked!" })
+	local ref = hookmetamethod(object, "__index", function() return true end)
+	assert(object.test == true, "Failed to hook a metamethod and change the return value")
+	assert(ref() == false, "Did not return the original function")
+end)
+
+test("getnamecallmethod", {}, function()
+	local method
+	local ref
+	ref = hookmetamethod(game, "__namecall", function(...)
+		if not method then
+			method = getnamecallmethod()
+		end
+		return ref(...)
+	end)
+	game:GetService("Lighting")
+	assert(method == "GetService", "Did not get the correct method (GetService)")
+end)
+
+test("isreadonly", {}, function()
+	local object = {}
+	table.freeze(object)
+	assert(isreadonly(object), "Did not return true for a read-only table")
+end)
+
+test("setrawmetatable", {}, function()
+	local object = setmetatable({}, { __index = function() return false end, __metatable = "Locked!" })
+	local objectReturned = setrawmetatable(object, { __index = function() return true end })
+	assert(object, "Did not return the original object")
+	assert(object.test == true, "Failed to change the metatable")
+	if objectReturned then
+		return objectReturned == object and "Returned the original object" or "Did not return the original object"
+	end
+end)
+
+test("setreadonly", {}, function()
+	local object = { success = false }
+	table.freeze(object)
+	setreadonly(object, false)
+	object.success = true
+	assert(object.success, "Did not allow the table to be modified")
+end)
+
+-- Miscellaneous
+
+test("identifyexecutor", {"getexecutorname"}, function()
+	local name, version = identifyexecutor()
+	assert(type(name) == "string", "Did not return a string for the name")
+	return type(version) == "string" and "Returns version as a string" or "Does not return version"
+end)
+
+test("lz4compress", {}, function()
+	local raw = "Hello, world!"
+	local compressed = lz4compress(raw)
+	assert(type(compressed) == "string", "Compression did not return a string")
+	assert(lz4decompress(compressed, #raw) == raw, "Decompression did not return the original string")
+end)
+
+test("lz4decompress", {}, function()
+	local raw = "Hello, world!"
+	local compressed = lz4compress(raw)
+	assert(type(compressed) == "string", "Compression did not return a string")
+	assert(lz4decompress(compressed, #raw) == raw, "Decompression did not return the original string")
+end)
+
+test("messagebox", {})
+
+test("queue_on_teleport", {"queueonteleport"})
+
+test("request", {"http.request", "http_request"}, function()
+	local response = request({
+		Url = "https://httpbin.org/user-agent",
+		Method = "GET",
+	})
+	assert(type(response) == "table", "Response must be a table")
+	assert(response.StatusCode == 200, "Did not return a 200 status code")
+	local data = game:GetService("HttpService"):JSONDecode(response.Body)
+	assert(type(data) == "table" and type(data["user-agent"]) == "string", "Did not return a table with a user-agent key")
+	return "User-Agent: " .. data["user-agent"]
+end)
+
+test("setclipboard", {"toclipboard"})
+
+test("setfpscap", {}, function()
+	local renderStepped = game:GetService("RunService").RenderStepped
+	local function step()
+		renderStepped:Wait()
+		local sum = 0
+		for _ = 1, 5 do
+			sum += 1 / renderStepped:Wait()
+		end
+		return math.round(sum / 5)
+	end
+	setfpscap(60)
+	local step60 = step()
+	setfpscap(0)
+	local step0 = step()
+	return step60 .. "fps @60 • " .. step0 .. "fps @0"
+end)
+
+-- Scripts
+
+test("getgc", {}, function()
+	local gc = getgc()
+	assert(type(gc) == "table", "Did not return a table")
+	assert(#gc > 0, "Did not return a table with any values")
+end)
+
+test("getgenv", {}, function()
+	getgenv().__TEST_GLOBAL = true
+	assert(__TEST_GLOBAL, "Failed to set a global variable")
+	getgenv().__TEST_GLOBAL = nil
+end)
+
+test("getloadedmodules", {}, function()
+	local modules = getloadedmodules()
+	assert(type(modules) == "table", "Did not return a table")
+	assert(#modules > 0, "Did not return a table with any values")
+	assert(typeof(modules[1]) == "Instance", "First value is not an Instance")
+	assert(modules[1]:IsA("ModuleScript"), "First value is not a ModuleScript")
+end)
+
+test("getrenv", {}, function()
+	assert(_G ~= getrenv()._G, "The variable _G in the executor is identical to _G in the game")
+end)
+
+test("getrunningscripts", {}, function()
+	local scripts = getrunningscripts()
+	assert(type(scripts) == "table", "Did not return a table")
+	assert(#scripts > 0, "Did not return a table with any values")
+	assert(typeof(scripts[1]) == "Instance", "First value is not an Instance")
+	assert(scripts[1]:IsA("ModuleScript") or scripts[1]:IsA("LocalScript"), "First value is not a ModuleScript or LocalScript")
+end)
+
+test("getscriptbytecode", {"dumpstring"}, function()
+	local animate = game:GetService("Players").LocalPlayer.Character.Animate
+	local bytecode = getscriptbytecode(animate)
+	assert(type(bytecode) == "string", "Did not return a string for Character.Animate (a " .. animate.ClassName .. ")")
+end)
+
+test("getscripthash", {}, function()
+	local animate = game:GetService("Players").LocalPlayer.Character.Animate:Clone()
+	local hash = getscripthash(animate)
+	local source = animate.Source
+	animate.Source = "print('Hello, world!')"
+	task.defer(function()
+		animate.Source = source
+	end)
+	local newHash = getscripthash(animate)
+	assert(hash ~= newHash, "Did not return a different hash for a modified script")
+	assert(newHash == getscripthash(animate), "Did not return the same hash for a script with the same source")
+end)
+
+test("getscripts", {}, function()
+	local scripts = getscripts()
+	assert(type(scripts) == "table", "Did not return a table")
+	assert(#scripts > 0, "Did not return a table with any values")
+	assert(typeof(scripts[1]) == "Instance", "First value is not an Instance")
+	assert(scripts[1]:IsA("ModuleScript") or scripts[1]:IsA("LocalScript"), "First value is not a ModuleScript or LocalScript")
+end)
+
+test("getsenv", {}, function()
+	local animate = game:GetService("Players").LocalPlayer.Character.Animate
+	local env = getsenv(animate)
+	assert(type(env) == "table", "Did not return a table for Character.Animate (a " .. animate.ClassName .. ")")
+	assert(env.script == animate, "The script global is not identical to Character.Animate")
+end)
+
+test("getthreadidentity", {"getidentity", "getthreadcontext"}, function()
+	assert(type(getthreadidentity()) == "number", "Did not return a number")
+end)
+
+test("setthreadidentity", {"setidentity", "setthreadcontext"}, function()
+	setthreadidentity(3)
+	assert(getthreadidentity() == 3, "Did not set the thread identity")
+end)
+
+-- Drawing
+
+test("Drawing", {})
+
+test("Drawing.new", {}, function()
+	local drawing = Drawing.new("Square")
+	drawing.Visible = false
+	local canDestroy = pcall(function()
+		drawing:Destroy()
+	end)
+	assert(canDestroy, "Drawing:Destroy() should not throw an error")
+end)
+
+test("Drawing.Fonts", {}, function()
+	assert(Drawing.Fonts.UI == 0, "Did not return the correct id for UI")
+	assert(Drawing.Fonts.System == 1, "Did not return the correct id for System")
+	assert(Drawing.Fonts.Plex == 2, "Did not return the correct id for Plex")
+	assert(Drawing.Fonts.Monospace == 3, "Did not return the correct id for Monospace")
+end)
+
+test("isrenderobj", {}, function()
+	local drawing = Drawing.new("Image")
+	drawing.Visible = true
+	assert(isrenderobj(drawing) == true, "Did not return true for an Image")
+	assert(isrenderobj(newproxy()) == false, "Did not return false for a blank table")
+end)
+
+test("getrenderproperty", {}, function()
+	local drawing = Drawing.new("Image")
+	drawing.Visible = true
+	assert(type(getrenderproperty(drawing, "Visible")) == "boolean", "Did not return a boolean value for Image.Visible")
+	local success, result = pcall(function()
+		return getrenderproperty(drawing, "Color")
+	end)
+	if not success or not result then
+		return "Image.Color is not supported"
+	end
+end)
+
+test("setrenderproperty", {}, function()
+	local drawing = Drawing.new("Square")
+	drawing.Visible = true
+	setrenderproperty(drawing, "Visible", false)
+	assert(drawing.Visible == false, "Did not set the value for Square.Visible")
+end)
+
+test("cleardrawcache", {}, function()
+	cleardrawcache()
+end)
+
+-- WebSocket
+
+test("WebSocket", {})
+
+test("WebSocket.connect", {}, function()
+	local types = {
+		Send = "function",
+		Close = "function",
+		OnMessage = {"table", "userdata"},
+		OnClose = {"table", "userdata"},
+	}
+	local ws = WebSocket.connect("ws://echo.websocket.events")
+	assert(type(ws) == "table" or type(ws) == "userdata", "Did not return a table or userdata")
+	for k, v in pairs(types) do
+		if type(v) == "table" then
+			assert(table.find(v, type(ws[k])), "Did not return a " .. table.concat(v, ", ") .. " for " .. k .. " (a " .. type(ws[k]) .. ")")
+		else
+			assert(type(ws[k]) == v, "Did not return a " .. v .. " for " .. k .. " (a " .. type(ws[k]) .. ")")
+		end
+	end
+	ws:Close()
+end)
