@@ -1,4 +1,8 @@
+function identifyexecutor()
+    return "Alysse"
+end
 
+print("Alysse V2")
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -1129,12 +1133,10 @@ mainframe.Draggable = true
 	end
 	
 	function stabtest(show)
-		print("selected:", show.Name)
 		for _, v in pairs(tabsfolder:GetChildren()) do
 			if v:IsA("Frame") then
 				if v ~= show then
 					v.Visible = false
-					print("hiding:", v.Name)
 				else
 					v.Visible = true
 				end
@@ -1143,7 +1145,6 @@ mainframe.Draggable = true
 	end
 	
 	function stab(show)
-		print("selected:", show.Name)
 		for _, v in pairs(tabsfolder:GetChildren()) do
 			if v:IsA("Frame") then
 				if v ~= show then
@@ -1236,6 +1237,10 @@ mainframe.Draggable = true
 	
 	click(copyexecbutton, function()
 		setclipboard(execbox.Text)
+	end)
+	
+	click(executeclipboard, function()
+		loadstring(getclipboard())
 	end)
 	
 	click(pasteexecbutton, function()
