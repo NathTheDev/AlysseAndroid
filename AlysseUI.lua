@@ -1,9 +1,4 @@
 print("Alysse V2")
-
-function identifyexecutor()
-	return "Alysse v2.0.0"
-end
-
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -1445,4 +1440,3 @@ mainframe.Draggable = true
 	
 end
 coroutine.wrap(QIWXMR_fake_script)()
-
