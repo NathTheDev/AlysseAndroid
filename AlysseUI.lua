@@ -2,13 +2,7 @@ function identifyexecutor()
     return "Alysse"
 end
 
-local whitelisted = {
-"FloodedFixed",
-"StuddsXD",
-"firesticktv2024"
-}
-
-if game.Players.LocalPlayer.Name == whitelisted then
+if game.Players.LocalPlayer.Name == {"FloodedFixed", "StuddsXD", firesticktv2024"} then
     loadUI()
 else
     warn("You are not WHITELISTED!")
