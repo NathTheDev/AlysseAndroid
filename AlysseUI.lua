@@ -1,7 +1,3 @@
-function identifyexecutor()
-    return "Alysse v2.0.0"
-end
-
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
