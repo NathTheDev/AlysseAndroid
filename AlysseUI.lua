@@ -1,3 +1,7 @@
+function identifyexecutor()
+    return "Alysse v2.0.0"
+end
+
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -617,7 +621,7 @@ executeclipboard.Text = "Execute CB"
 executeclipboard.TextColor3 = Color3.fromRGB(145, 145, 145)
 executeclipboard.TextSize = 14.000
 executeclipboard.MouseButton1Down:connect(function()
-    loadstring(getclipboard())
+    loadstring(getclipboard())()
 end
 
 UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
