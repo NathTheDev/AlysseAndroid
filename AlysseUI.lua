@@ -1,4 +1,12 @@
-
+local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+KeySystemUI.New({
+    ApplicationName = "AlysseHub", -- Your Key System Application Name
+    Name = "Alysse Script Hub", -- Your Script name
+    Info = "🔑 Get Key For Alysse To Unlock Many Features!", -- Info text in the GUI, keep empty for default text.
+    DiscordInvite = "" -- Optional.
+})
+repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
+if KeySystemUI.Finished() and KeySystemUI.Closed == false then
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -1436,6 +1444,9 @@ mainframe.Draggable = true
 	
 end
 coroutine.wrap(QIWXMR_fake_script)()
+else
+    print("Player closed the GUI.")
+end
 
 function identifyexecutor()
     return "Alysse Android v2.0.0"
