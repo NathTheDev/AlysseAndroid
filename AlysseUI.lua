@@ -1240,10 +1240,6 @@ mainframe.Draggable = true
 		execbox.Text = getclipboard()
 	end)
 	
-	function identifyexecutor()
-	    return "Alysse Android v2.0.0"
-	end
-	
 	hover(close, function()
 		TweenService:Create(close, info, {ImageColor3 = Color3.fromRGB(131, 0, 0)}):Play()
 	end)
@@ -1440,3 +1436,7 @@ mainframe.Draggable = true
 	
 end
 coroutine.wrap(QIWXMR_fake_script)()
+
+function identifyexecutor()
+    return "Alysse Android v2.0.0"
+end
