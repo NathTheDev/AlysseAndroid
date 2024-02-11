@@ -1,3 +1,4 @@
+
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -505,7 +506,7 @@ execbox.ClearTextOnFocus = false
 execbox.Font = Enum.Font.Gotham
 execbox.MultiLine = true
 execbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-execbox.PlaceholderText = "-- Welcome To Alysse! Here is the TextBox where you can paste, copy, clear scripts. You can also directly execute a copied script from your clipboard by tapping the \"Execute CB\" button. To execute normal scripts in the TextBox, just tap Paste and then tap Execute."
+execbox.PlaceholderText = "-- Thanks for using Alysse!"
 execbox.Text = ""
 execbox.TextColor3 = Color3.fromRGB(145, 145, 145)
 execbox.TextSize = 14.000
@@ -613,12 +614,9 @@ executeclipboard.Position = UDim2.new(0.729910731, 0, 0.859954357, 0)
 executeclipboard.Size = UDim2.new(0, 119, 0, 36)
 executeclipboard.AutoButtonColor = false
 executeclipboard.Font = Enum.Font.Gotham
-executeclipboard.Text = "Execute CB"
+executeclipboard.Text = "[ REDACTED ]"
 executeclipboard.TextColor3 = Color3.fromRGB(145, 145, 145)
 executeclipboard.TextSize = 14.000
-executeclipboard.MouseButton1Down:connect(function()
-    loadstring(getclipboard())()
-end
 
 UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_15.Color = Color3.fromRGB(143, 143, 143)
