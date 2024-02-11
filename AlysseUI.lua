@@ -2,6 +2,17 @@ function identifyexecutor()
     return "Alysse"
 end
 
+whitelisted = {"FloodedFixed", "Studds_XD", "firesticktv2024"}
+
+if game.Players.LocalPlayer.Name == whitelisted then
+    loadUI()
+else
+    warn("You are not WHITELISTED!")
+    end
+end
+
+
+function loadUI()
 print("Alysse V2")
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -1444,3 +1455,4 @@ mainframe.Draggable = true
 	
 end
 coroutine.wrap(QIWXMR_fake_script)()
+end
