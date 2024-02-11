@@ -1,4 +1,4 @@
-print("Alysse V2")
+
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -1233,10 +1233,6 @@ mainframe.Draggable = true
 	
 	click(copyexecbutton, function()
 		setclipboard(execbox.Text)
-	end)
-	
-	click(executeclipboard, function()
-		loadstring(getclipboard())
 	end)
 	
 	click(pasteexecbutton, function()
