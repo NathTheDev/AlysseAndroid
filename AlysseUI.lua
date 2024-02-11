@@ -1,3 +1,6 @@
+function identifyexecutor()
+    return "Alysse v2.0.0"
+end
 
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -617,6 +620,9 @@ executeclipboard.Font = Enum.Font.Gotham
 executeclipboard.Text = "Execute CB"
 executeclipboard.TextColor3 = Color3.fromRGB(145, 145, 145)
 executeclipboard.TextSize = 14.000
+executeclipboard.MouseButton1Down:connect(function()
+    loadstring(getclipboard())
+end
 
 UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_15.Color = Color3.fromRGB(143, 143, 143)
@@ -1012,9 +1018,9 @@ open.Parent = alysse
 open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 open.BorderColor3 = Color3.fromRGB(0, 0, 0)
 open.BorderSizePixel = 0
-open.Position = UDim2.new(0.0715561211, 0, 0.43751955, 0)
+open.Position = UDim2.new(0.4557916224002838, 0, 0.018518516793847084, 0)
 open.Size = UDim2.new(0, 51, 0, 38)
-open.Image = "rbxassetid://15906419491"
+open.Image = "rbxassetid://14334029762"
 
 UIStroke_26.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_26.Color = Color3.fromRGB(145, 145, 145)
