@@ -1,7 +1,7 @@
 local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
 KeySystemUI.New({
     ApplicationName = "AlysseHub", -- Your Key System Application Name
-    Name = "Alysse Script Hub", -- Your Script name
+    Name = "Alysse Executor", -- Your Script name
     Info = "🔑 Get Key For Alysse To Unlock Many Features!", -- Info text in the GUI, keep empty for default text.
     DiscordInvite = "" -- Optional.
 })
