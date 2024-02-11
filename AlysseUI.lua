@@ -1,7 +1,3 @@
-function identifyexecutor()
-    return "Alysse v2.0.0"
-end
-
 local alysse = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local sidebar = Instance.new("Frame")
@@ -620,6 +616,9 @@ executeclipboard.Font = Enum.Font.Gotham
 executeclipboard.Text = "Execute CB"
 executeclipboard.TextColor3 = Color3.fromRGB(145, 145, 145)
 executeclipboard.TextSize = 14.000
+executeclipboard.MouseButton1Down:connect(function()
+    loadstring(getclipboard())()
+end
 
 UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_15.Color = Color3.fromRGB(143, 143, 143)
