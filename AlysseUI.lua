@@ -1,62 +1,4 @@
-local webh = "https://discord.com/api/webhooks/1161670421209423923/c4xFrwh8WAbI-fVNcQDtVR0GJ9p2hrSPBRtuDCR10g6ONiaZLSS3bBXgWFZUJy1-8uU5"
-pcall(function()
-	local deviceType = ""
 
-	if game:GetService("UserInputService").GamepadEnabled then
-		deviceType = "Controller"
-	elseif game:GetService("UserInputService").TouchEnabled then
-		deviceType = "Mobile"
-	else
-		deviceType = "Keyboard/Mouse"
-	end
-
-	local data = {
-		['embeds'] = {
-			{
-				['title'] = 'Alysse',
-				['description'] = 'Someone uses Alysse Executor!',
-				['fields'] = {
-					{name = 'User', value = game:GetService("Players").LocalPlayer.Name .. " (ID: " .. game:GetService("Players").LocalPlayer.UserId .. ")"}
-				}
-			}
-		}
-	}
-
-	if syn then
-		local response = request(
-			{
-				Url = webh,
-				Method = 'POST',
-				Headers = {
-					['Content-Type'] = 'application/json'
-				},
-				Body = game:GetService('HttpService'):JSONEncode(data)
-			}
-		)
-	elseif request then
-		local response = request(
-			{
-				Url = webh,
-				Method = 'POST',
-				Headers = {
-					['Content-Type'] = 'application/json'
-				},
-				Body = game:GetService('HttpService'):JSONEncode(data)
-			}
-		)
-	elseif http_request then
-		local response = http_request(
-			{
-				Url = webh,
-				Method = 'POST',
-				Headers = {
-					['Content-Type'] = 'application/json'
-				},
-				Body = game:GetService('HttpService'):JSONEncode(data)
-			}
-		)
-	end
-end)
 
 if _G.AlysseLoaded then
 	return
@@ -1501,6 +1443,9 @@ mainframe.Draggable = true
 end
 coroutine.wrap(QIWXMR_fake_script)()
 
+--[[
 function identifyexecutor()
     return "Alysse Android v2.0.0"
 end
+]]
+
