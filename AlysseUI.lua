@@ -1443,9 +1443,6 @@ mainframe.Draggable = true
 end
 coroutine.wrap(QIWXMR_fake_script)()
 
---[[
 function identifyexecutor()
     return "Alysse Android v2.0.0"
 end
-]]
-
