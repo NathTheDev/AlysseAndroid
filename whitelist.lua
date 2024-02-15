@@ -1,0 +1,4 @@
+local whitelisted = {
+  "FloodedFixed",
+  "darkalliancekaushik"
+}
