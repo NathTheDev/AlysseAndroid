@@ -1,4 +1,4 @@
-
+runautoexec()
 
 if _G.AlysseLoaded then
 	return
